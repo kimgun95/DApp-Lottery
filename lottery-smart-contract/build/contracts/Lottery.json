@@ -1,20 +1,58 @@
 {
   "contractName": "Lottery",
-  "abi": [],
-  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a72305820c0c275f3428e9a7c0944f1364eb314c9ca61090dd10465ecc0dc06456accd85e0029",
-  "deployedBytecode": "0x6080604052600080fdfea165627a7a72305820c0c275f3428e9a7c0944f1364eb314c9ca61090dd10465ecc0dc06456accd85e0029",
-  "sourceMap": "69:29:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;69:29:0;;;;;;;",
-  "deployedSourceMap": "69:29:0:-;;;;;",
-  "source": "pragma solidity >=0.4.22 <0.9.0; // 스마트 컨트랙트 버전\r\n\r\ncontract Lottery {\r\n\r\n    \r\n}",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0x8da5cb5b"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor",
+      "signature": "constructor"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getSomeValue",
+      "outputs": [
+        {
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function",
+      "signature": "0xa40674b7"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610124806100606000396000f3fe6080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680638da5cb5b14604e578063a40674b71460a2575b600080fd5b348015605957600080fd5b50606060ca565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801560ad57600080fd5b5060b460ef565b6040518082815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000600590509056fea165627a7a72305820073ae81aa98e188d266498caa1934e05b71d1ab6124f6dc1290460b77c646f140029",
+  "deployedBytecode": "0x6080604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680638da5cb5b14604e578063a40674b71460a2575b600080fd5b348015605957600080fd5b50606060ca565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801560ad57600080fd5b5060b460ef565b6040518082815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000600590509056fea165627a7a72305820073ae81aa98e188d266498caa1934e05b71d1ab6124f6dc1290460b77c646f140029",
+  "sourceMap": "69:213:0:-;;;124:58;8:9:-1;5:2;;;30:1;27;20:12;5:2;124:58:0;164:10;156:5;;:18;;;;;;;;;;;;;;;;;;69:213;;;;;;",
+  "deployedSourceMap": "69:213:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;95:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;95:20:0;;;;;;;;;;;;;;;;;;;;;;;;;;;190:87;;8:9:-1;5:2;;;30:1;27;20:12;5:2;190:87:0;;;;;;;;;;;;;;;;;;;;;;;95:20;;;;;;;;;;;;;:::o;190:87::-;235:13;268:1;261:8;;190:87;:::o",
+  "source": "pragma solidity >=0.4.22 <0.9.0; // 스마트 컨트랙트 버전\r\n\r\ncontract Lottery {\r\n\r\n    address public owner;\r\n\r\n    constructor() public {\r\n        owner = msg.sender;\r\n    }\r\n\r\n    function getSomeValue() public pure returns (uint256 value) {\r\n        return 5;\r\n    }\r\n\r\n}",
   "sourcePath": "D:/BlockChain/lottery-smart-contract/contracts/Lottery.sol",
   "ast": {
     "absolutePath": "/D/BlockChain/lottery-smart-contract/contracts/Lottery.sol",
     "exportedSymbols": {
       "Lottery": [
-        2
+        21
       ]
     },
-    "id": 3,
+    "id": 22,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -37,27 +75,234 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 2,
+        "id": 21,
         "linearizedBaseContracts": [
-          2
+          21
         ],
         "name": "Lottery",
         "nodeType": "ContractDefinition",
-        "nodes": [],
-        "scope": 3,
-        "src": "69:29:0"
+        "nodes": [
+          {
+            "constant": false,
+            "id": 3,
+            "name": "owner",
+            "nodeType": "VariableDeclaration",
+            "scope": 21,
+            "src": "95:20:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "95:7:0",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 11,
+              "nodeType": "Block",
+              "src": "145:37:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 9,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3,
+                      "src": "156:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 7,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 69,
+                        "src": "164:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 8,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "164:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "156:18:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 10,
+                  "nodeType": "ExpressionStatement",
+                  "src": "156:18:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 12,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "135:2:0"
+            },
+            "returnParameters": {
+              "id": 5,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "145:0:0"
+            },
+            "scope": 21,
+            "src": "124:58:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 19,
+              "nodeType": "Block",
+              "src": "250:27:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "35",
+                    "id": 17,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "268:1:0",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_5_by_1",
+                      "typeString": "int_const 5"
+                    },
+                    "value": "5"
+                  },
+                  "functionReturnParameters": 16,
+                  "id": 18,
+                  "nodeType": "Return",
+                  "src": "261:8:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 20,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getSomeValue",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "211:2:0"
+            },
+            "returnParameters": {
+              "id": 16,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15,
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 20,
+                  "src": "235:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "235:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "234:15:0"
+            },
+            "scope": 21,
+            "src": "190:87:0",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 22,
+        "src": "69:213:0"
       }
     ],
-    "src": "0:98:0"
+    "src": "0:282:0"
   },
   "legacyAST": {
     "absolutePath": "/D/BlockChain/lottery-smart-contract/contracts/Lottery.sol",
     "exportedSymbols": {
       "Lottery": [
-        2
+        21
       ]
     },
-    "id": 3,
+    "id": 22,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -80,18 +325,225 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 2,
+        "id": 21,
         "linearizedBaseContracts": [
-          2
+          21
         ],
         "name": "Lottery",
         "nodeType": "ContractDefinition",
-        "nodes": [],
-        "scope": 3,
-        "src": "69:29:0"
+        "nodes": [
+          {
+            "constant": false,
+            "id": 3,
+            "name": "owner",
+            "nodeType": "VariableDeclaration",
+            "scope": 21,
+            "src": "95:20:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "95:7:0",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 11,
+              "nodeType": "Block",
+              "src": "145:37:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 9,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 6,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3,
+                      "src": "156:5:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 7,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 69,
+                        "src": "164:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 8,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "164:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "156:18:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 10,
+                  "nodeType": "ExpressionStatement",
+                  "src": "156:18:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 12,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "135:2:0"
+            },
+            "returnParameters": {
+              "id": 5,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "145:0:0"
+            },
+            "scope": 21,
+            "src": "124:58:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 19,
+              "nodeType": "Block",
+              "src": "250:27:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "35",
+                    "id": 17,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "268:1:0",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_5_by_1",
+                      "typeString": "int_const 5"
+                    },
+                    "value": "5"
+                  },
+                  "functionReturnParameters": 16,
+                  "id": 18,
+                  "nodeType": "Return",
+                  "src": "261:8:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 20,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getSomeValue",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "211:2:0"
+            },
+            "returnParameters": {
+              "id": 16,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15,
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 20,
+                  "src": "235:13:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "235:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "234:15:0"
+            },
+            "scope": 21,
+            "src": "190:87:0",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 22,
+        "src": "69:213:0"
       }
     ],
-    "src": "0:98:0"
+    "src": "0:282:0"
   },
   "compiler": {
     "name": "solc",
@@ -101,12 +553,24 @@
     "1660197211431": {
       "events": {},
       "links": {},
-      "address": "0x00dEF0A3EC0DE2d4b9f931Ed39F27E0f9f427441",
-      "transactionHash": "0xc8c5ef87eb0632b3bcfe65121533f490109f3ae62f8170eaca98aef0d28bfd81"
+      "address": "0xE1867aa805FF0891D8a021836065b45CaC0543eE",
+      "transactionHash": "0x9fed0cb966314a6a285de3bb4d488de7c91ddd4b45110dfbc753ee0ef04c6f8d"
+    },
+    "1660201561390": {
+      "events": {},
+      "links": {},
+      "address": "0x081a509782E760B3A8cd64Cb7cac01F903861251",
+      "transactionHash": "0xd38948f4676294a0f639c11ed881cf2a40f50e1ad8f752dc73f0c09fa62c9619"
+    },
+    "1660202059483": {
+      "events": {},
+      "links": {},
+      "address": "0x081a509782E760B3A8cd64Cb7cac01F903861251",
+      "transactionHash": "0xd38948f4676294a0f639c11ed881cf2a40f50e1ad8f752dc73f0c09fa62c9619"
     }
   },
   "schemaVersion": "3.0.1",
-  "updatedAt": "2022-08-11T05:55:54.779Z",
+  "updatedAt": "2022-08-11T07:19:42.054Z",
   "devdoc": {
     "methods": {}
   },
