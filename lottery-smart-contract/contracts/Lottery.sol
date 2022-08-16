@@ -13,7 +13,7 @@ contract Lottery {
 
     uint256 constant internal BLOCK_LIMIT = 256; // 블록 해시는 256번 째 전 까지만 확인할 수 있음
     uint256 constant internal BET_BLOCK_INTERVAL = 3;
-    uint256 constant internal BET_AMOUNT = 5 * 10 ** 15; // 10 ** 15 = 0.001 wei
+    uint256 constant internal BET_AMOUNT = 5 * 10 ** 15; // 10 ** 15wei = 0.001 ETH
 
     uint256 private _pot; // 팟 머니를 저장하는 곳
 
