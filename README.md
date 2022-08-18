@@ -11,3 +11,4 @@
 * [Lottery 도메인 및 Queue 설계](https://gold-stingray-75b.notion.site/Lottery-Queue-22d1472602cf40a0b1044f2dd7877ace)
 * [Bet 함수 구현](https://gold-stingray-75b.notion.site/Bet-f77a874a8f8f45b59d6c727910ebc557)
 * [Bet 함수 테스트](https://gold-stingray-75b.notion.site/Bet-4c7fb297f859450d9272020450b29aee)
+* [이더리움 Gas 계산](https://gold-stingray-75b.notion.site/Gas-4d3caf19698b4f0895546d7d5371b737)
