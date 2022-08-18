@@ -70,12 +70,12 @@ contract Lottery {
 
     function pushBet(byte challenges) public returns (bool) {
         BetInfo memory b;
-        b.bettor = msg.sender;
-        b.answerBlockNumber = block.number + BET_BLOCK_INTERVAL;
-        b.challenges = challenges;
+        b.bettor = msg.sender; // 20 byte
+        b.answerBlockNumber = block.number + BET_BLOCK_INTERVAL; // 32 byte == 20000 gas
+        b.challenges = challenges; // byte (bettor + challenges == 20000 gas)
 
-        _bets[_tail] = b;
-        _tail++;
+        _bets[_tail] = b; // mapping만 해주면 됨 (gas 발생 x)
+        _tail++; // 32 byte == 20000 gas
 
         return true;
     }
