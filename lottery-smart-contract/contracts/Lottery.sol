@@ -17,6 +17,8 @@ contract Lottery {
 
     uint256 private _pot; // 팟 머니를 저장하는 곳
 
+    enum BlockStatus {Checkable, NotRevealed, BlockLimitPassed}
+
     // 2. Lottery Queue 설계
     uint256 private _tail;
     uint256 private _head;
@@ -56,9 +58,46 @@ contract Lottery {
         return true;
      }
 
-    // Bet
-        // save the bet to the queue
     // Distribute
+    function distribute() public {
+        // head 3 4 5 6 7 8 9 10 11 12 tail
+        
+        uint256 cur;
+        BetInfo memory b;
+        BlockStatus curBlockStatus;
+        for (cur=_head; cur<_tail; cur++) {
+            b = _bets[cur];
+            curBlockStatus = getBlockStatus(b.answerBlockNumber);
+            
+            if (curBlockStatus == BlockStatus.Checkable) { // Checkable : AnswerBlockNumber(나의 정답 블록) < block.number(현재 블록) < BLOCK_LIMIT + AnswerBlockNumber
+                // if win, bettor gets pot
+
+                // if fail, bettor's money goes pot
+
+                // if draw, refund bettor's money
+
+            } else if (curBlockStatus == BlockStatus.NotRevealed) { // Not Revealed : block.number <= AnswerBlockNumber
+                break;
+            } else if (curBlockStatus == BlockStatus.BlockLimitPassed) { // Block Limit Passed : block.number >= AnswerBlock + BLOCK_LIMIT
+                // refund
+                // emit refund
+            }
+            
+            // check the answer
+        }
+    }
+
+    function getBlockStatus(uint256 answerBlockNumber) internal view returns (BlockStatus) {
+        if (block.number > answerBlockNumber && block.number < BLOCK_LIMIT + answerBlockNumber) {
+            return BlockStatus.Checkable;
+        } else if (block.number <= answerBlockNumber) {
+            return BlockStatus.NotRevealed;
+        } else if (block.number >= answerBlockNumber + BLOCK_LIMIT) {
+            return BlockStatus.BlockLimitPassed;
+        }
+        return BlockStatus.BlockLimitPassed; // 디폴트로 반환이 될 수 있을 것을 리턴
+    }
+
         // check the answer
     
     function getBetInfo(uint256 index) public view returns (uint256 answerBlockNumber, address bettor, byte challenges) {
